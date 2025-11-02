@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Login to AWS
-        uses: KoalaOps/login-aws@v1
+        uses: skyhook-io/login-aws@v1
         with:
           role_to_assume: arn:aws:iam::123456789012:role/github-actions
           aws_region: us-east-1
@@ -202,7 +202,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 
 ```yaml
 - name: Login to AWS with access keys
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
     aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -214,7 +214,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 
 ```yaml
 - name: Login to AWS with ECR
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -231,7 +231,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 
 ```yaml
 - name: Login and setup ECR repo
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -243,7 +243,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 
 ```yaml
 - name: Login to AWS with EKS
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -260,7 +260,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 ```yaml
 - name: Login to AWS with multiple ECR registries
   id: aws
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -285,7 +285,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 
 ```yaml
 - name: Login to AWS with CodeArtifact
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -305,7 +305,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 
 ```yaml
 - name: Login to AWS with CodeArtifact
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -327,7 +327,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 
 ```yaml
 - name: Login to AWS with cross-account CodeArtifact
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -343,7 +343,7 @@ For cross-account CodeArtifact access, specify the `codeartifact_domain_owner` p
 
 ```yaml
 - name: Login to AWS with CodeArtifact
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -406,7 +406,7 @@ Alternatively, you can create the settings.xml in your workflow:
 
 ```yaml
 - name: Login to AWS with CodeArtifact
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -451,7 +451,7 @@ Alternatively, you can create the settings.xml in your workflow:
 
 ```yaml
 - name: Login to AWS with CodeArtifact
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -474,7 +474,7 @@ When building Docker images that need to install packages from CodeArtifact, you
 ```yaml
 - name: Login to AWS with CodeArtifact (token mode)
   id: aws
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -605,7 +605,7 @@ publishing {
 
 ```yaml
 - name: Login to AWS for long operation
-  uses: KoalaOps/login-aws@v1
+  uses: skyhook-io/login-aws@v1
   with:
     role_to_assume: ${{ secrets.AWS_ROLE_ARN }}
     aws_region: us-east-1
@@ -617,7 +617,7 @@ publishing {
 This action internally uses:
 - `aws-actions/configure-aws-credentials@v4` - AWS OIDC authentication
 - `aws-actions/amazon-ecr-login@v2` - ECR Docker login
-- `KoalaOps/ensure-ecr-repository@v1` - ECR repository creation (when ecr_repositories provided)
+- `skyhook-io/ensure-ecr-repository@v1` - ECR repository creation (when ecr_repositories provided)
 
 ## Security Best Practices
 
@@ -759,9 +759,9 @@ For publishing packages, add:
 
 ## Support
 
-- 📖 [Documentation](https://github.com/KoalaOps/login-aws-action)
-- 🐛 [Issue Tracker](https://github.com/KoalaOps/login-aws-action/issues)
-- 💬 [Discussions](https://github.com/KoalaOps/login-aws-action/discussions)
+- 📖 [Documentation](https://github.com/skyhook-io/login-aws-action)
+- 🐛 [Issue Tracker](https://github.com/skyhook-io/login-aws-action/issues)
+- 💬 [Discussions](https://github.com/skyhook-io/login-aws-action/discussions)
 
 ## License
 

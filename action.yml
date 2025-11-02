@@ -1,6 +1,6 @@
 name: 'Login to AWS'
 description: 'Authenticate to AWS using OIDC with optional ECR login and EKS setup'
-author: 'KoalaOps'
+author: 'Skyhook'
 
 branding:
   icon: 'cloud'
@@ -158,7 +158,7 @@ runs:
     
     - name: Ensure ECR repositories exist
       if: inputs.enable_ecr_login == 'true' && inputs.ecr_repositories != ''
-      uses: KoalaOps/ensure-ecr-repository@v1
+      uses: skyhook-io/ensure-ecr-repository@v1
       with:
         repository-name: ${{ inputs.ecr_repositories }}
         aws-region: ${{ inputs.aws_region }}
