@@ -1,4 +1,4 @@
-name: 'Login to AWS'
+name: 'Skyhook Login to AWS'
 description: 'Authenticate to AWS using OIDC with optional ECR login and EKS setup'
 author: 'Skyhook'
 
